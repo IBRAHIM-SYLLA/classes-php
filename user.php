@@ -8,13 +8,6 @@ class User{
     public $firstname;
     public $lastname;
 
-// Methods
-// function set_name($name){
-//     $this->name = $name;
-//   }
-//   function get_name() {
-//     return $this->name;
-//   }
     function __construct(){
         $this ->bdd = mysqli_connect('localhost','root','','classes');
         mysqli_set_charset($this ->bdd, 'utf8');
@@ -44,8 +37,6 @@ class User{
     public function connect($login, $password){
         $requete4 = mysqli_query($this -> bdd,"SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password'");
         $utilisateur = mysqli_fetch_all($requete4, MYSQLI_ASSOC);
-        // var_dump($utilisateur);
-        // var_dump($requete4);
         if(count($utilisateur) > 0){
             session_start();
             $_SESSION['utilisateur'] = [

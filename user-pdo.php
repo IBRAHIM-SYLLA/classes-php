@@ -16,20 +16,6 @@ class Userpdo{
         $this->bdd = $bdd;
         return $bdd;
     }
-    // PDO
-    // preparer des requetes et les executer
-    // public function selectAllWhereLogin($login)
-    // {
-
-    //     $requete = "SELECT * FROM utilisateurs WHERE login = :login";
-    //     var_dump($requete);
-    //     $result = $this->bdd->prepare($requete);
-    //     $result->bindValue(':login', $login, PDO::PARAM_STR);
-    //     $result->execute();
-
-    //     $fetch = $result->fetchAll();
-    //     return $fetch;
-    // }
     public function register($login, $password, $email, $firstname, $lastname){
 
         $requete = "INSERT INTO `utilisateurs`( `login`, `password`, `email`, `firstname`, `lastname`) VALUES (:login, :password, :email, :firstname, :lastname)";
