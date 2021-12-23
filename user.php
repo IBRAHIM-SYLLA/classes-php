@@ -8,7 +8,7 @@ class User{
     public $firstname;
     public $lastname;
 
-    function __construct(){
+    public function __construct(){
         $this ->bdd = mysqli_connect('localhost','root','','classes');
         mysqli_set_charset($this ->bdd, 'utf8');
         return $this -> bdd;
@@ -46,7 +46,7 @@ class User{
                 'email' => $utilisateur[0]['email'],
                 'firstname' => $utilisateur[0]['firstname'],
                 'lastname' => $utilisateur[0]['lastname'],
-            ]; var_dump($_SESSION['utilisateur']);
+            ];
         }
     }
     public function disconnect(){
