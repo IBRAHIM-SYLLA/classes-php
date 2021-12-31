@@ -130,9 +130,12 @@ class Userpdo{
 }
 
 $UserPdo = new USerpdo();
-// $UserPdo->register('fred','ibra','fredok@gmail.com','fredok','sonder');
-// echo $UserPdo->connect('ibra','fredok');
+$UserPdo->register('fred','ibra','fredok@gmail.com','fredok','sonder');
 echo $UserPdo->isConnected();
-// $UserPdo->update('ibra', 'fredok', 'fredok@voyou.fr', 'federick', 'sonder');
-$UserPdo->getAllinfos();
-?>
+echo $UserPdo->getAllinfos().'<br>';
+echo $UserPdo->getLogin().'<br>';
+echo $UserPdo->getEmail().'<br>';
+echo $UserPdo->getLogin().'<br>';
+echo $UserPdo->getFirstname().'<br>';
+echo $UserPdo->getLastname();
+

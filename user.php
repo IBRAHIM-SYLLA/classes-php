@@ -106,9 +106,37 @@ class User{
     }
 
 }
- $personne = new User;
-$personne -> register('ibrahim-sylla','bb', 'ibra@voyou.fr', 'ibrahim', 'sylla');
-$personne -> connect('ibrahim-sylla','bb');
-echo $personne -> isConnected();
- echo $personne -> getAllinfos();
+$personne = new User;
+// $personne -> register('ibrahim-sylla','bb', 'ibra@voyou.fr', 'ibrahim', 'sylla');
+// $personne -> connect('ibrahim-sylla','bb');
+// echo $personne -> isConnected();
+//  echo $personne -> getAllinfos();
+
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $personne -> register($login, $password, $email, $firstname, $lastname);
+
 ?>
+<html>
+    <form action="" method="post">
+            <label for="login">Login</label>
+            <input type="text" id="login" name="login">
+
+            <label for="password">password</label>
+            <input type="password" id="password" name="password">
+
+            <label for="email">email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="firstname">firstname</label>
+            <input type="firstname" id="firstname" name="firstname">
+
+            <label for="lastname">lastname</label>
+            <input type="lastname" id="lastname" name="lastname">
+
+            <input type="submit" value="inscription">
+    </form>
+</html>
